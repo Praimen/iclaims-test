@@ -1,0 +1,65 @@
+#parse ($init)
+
+
+        <!DOCTYPE html>
+<html class="#language("lang.dir")" dir="#language("lang.dir")" lang="$w3c_language_id" xmlns:ng="http://angularjs.org" id="ng-app" ng-app="yoNewTestApp">
+
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>Blank Test Theme</title>
+
+
+$theme.include($top_head_include)
+<link rel="stylesheet" href="/iclaims-theme/styles/vendor.css"/>
+<link rel="stylesheet" href="/iclaims-theme/styles/main.css"/>
+
+<script src="/iclaims-theme/scripts/vendor.js"></script>
+<script src="/iclaims-theme/scripts/scripts.js"></script>
+
+
+</head>
+
+<body class="$css_class">
+
+#if($showDockbar)
+#dockbar()
+#end
+<div class="container" id="content">
+    #if ($selectable)
+    $theme.include($content_include)
+    #else
+    $portletDisplay.recycle()
+    $portletDisplay.setTitle($the_title)
+    $theme.wrapPortlet("portlet.vm", $content_include)
+    #end
+    #*<div class="header">
+        #if ($has_navigation)
+        #end
+        <ul class="nav nav-pills pull-right">
+            <li class="active"><a href="#testpage">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="/">Contact</a></li>
+        </ul>
+        <h3 class="text-muted">yoNewTest</h3>
+    </div>*#
+
+
+
+    <!-- Site footer -->
+    <div id="footer" role="contentinfo" class="footer">
+
+    </div>
+</div>
+</body>
+
+        $theme.include($bottom_include)
+      #*  <!--[if lt IE 9]>
+        <script src="/iclaims-theme/bower_components/es5-shim/es5-shim.js"></script>
+        <script src="/iclaims-theme/bower_components/json3/lib/json3.min.js"></script>
+        <![endif]-->
+      *#
+
+
+
+        </html>

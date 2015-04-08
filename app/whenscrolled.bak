@@ -1,0 +1,37 @@
+'use strict';
+
+/**
+ * @ngdoc directive
+ * @name yoNewTestApp.directive:whenScrolled
+ * @description
+ * # whenScrolled
+ */
+angular.module('yoNewTestApp').directive('whenScrolled', function() {
+  return {
+    controller: 'IclaimsLineCtrl',
+    link: function (scope, elm, attr, controller) {
+      var raw = elm[0];
+      var scrollLoad = true;
+      /*console.log('directive scope ', scope);
+
+      elm.bind('scroll', function () {
+
+        if (!scrollLoad && raw.scrollTop + raw.offsetHeight < raw.scrollHeight) {
+          scrollLoad = true;
+        }
+
+        if (raw.scrollTop + raw.offsetHeight >= raw.scrollHeight || raw.scrollTop == 0) {
+          console.log(scrollLoad);
+          if (scrollLoad) {
+            controller.listRange.start += controller.limitTo();
+            controller.listRange.end += controller.limitTo();
+            scope.$apply(attr.whenScrolled);
+            scrollLoad = false;
+          }
+
+        }
+      });*/
+    }
+  }
+
+});
