@@ -8,7 +8,7 @@ describe('Service: underscore', function () {
   // instantiate service
   var underscore;
   beforeEach(inject(function (_underscore_) {
-    underscore = _underscore_;
+    underscore = _underscore_ ;
   }));
 
   it('should do something', function () {
