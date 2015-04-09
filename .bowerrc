@@ -4,10 +4,7 @@
     "https-proxy": "",
     "timeout": 120000,
     "registry": {
-      "search": [
-        "http://localhost:5678",
-        "https://bower.herokuapp.com"
-      ]
+
     }
 
 
