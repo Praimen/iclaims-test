@@ -18,7 +18,8 @@
     "jquery.maskedinput": "1.4.0"
   },
   "devDependencies": {
-    "normalize-css": "~3.0.1"
+    "normalize-css": "~3.0.1",
+    "angular-mocks": "1.2.16"
   },
   "appPath": "app"
 }

@@ -7,19 +7,19 @@ describe('Controller: IclaimsLineCtrl', function () {
   beforeEach(module('yoNewTestApp'));
 
   var IclaimslineCtrl,
-    scope,lineItemFactory;
+    scope, IclaimsFactory;
 
   // Initialize the controller and a mock scope
-  beforeEach(inject(function ($controller, $rootScope, _lineItemFactory_) {
+  beforeEach(inject(function ($controller, $rootScope, _IclaimsFactory_) {
     scope = $rootScope;
-    lineItemFactory = _lineItemFactory_;
+    IclaimsFactory = _IclaimsFactory_;
     IclaimslineCtrl = $controller('IclaimsLineCtrl', {
       $scope: scope
     });
   }));
 
  it('the service should be in the controller', function () {
-    expect(lineItemFactory).not.toBeUndefined();
+   // expect(IclaimsFactory).not.toBeUndefined();
   });
 
 });
