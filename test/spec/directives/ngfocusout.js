@@ -1,30 +1,37 @@
 'use strict';
 
 describe('Directive: ngFocusOut', function () {
-
+  var element,
+    scope,
+    compiled,
+    html,
+    IclaimslineCtrl,
+    lineItemFactory,
+    IclaimsFactory;
     // load the directive's module
-    beforeEach(module('yoNewTestApp'));
+  beforeEach(module('yoNewTestApp', function ($provide){
+    IclaimsFactory = {
+      setClaimScope: jasmine.createSpy()
+    };
 
-    var element,
-        scope,
-        compiled,
-        html,
-        IclaimslineCtrl,
-        lineItemFactory;
+    $provide.value('IclaimsFactory',IclaimsFactory);
+  }));
 
 
-    beforeEach(inject(function ($controller, $compile,$rootScope, _lineItemFactory_) {
+
+
+    beforeEach(inject(function ($controller, $compile,$rootScope, _IclaimsFactory_) {
 
 
         html = '<input type="text"  adjLineAttr="oicPaidAmount" ng-model="lineForm.lineLevelAdjustments[0].adjustmentPaymentDetail.oicPaidAmount" ng-focus-out="0" ng-focus="checkSelectedLine()"/>';
 
         //create a scope (you could just use $rootScope, I suppose)
-        scope = $rootScope;
 
-        lineItemFactory = _lineItemFactory_;
-        IclaimslineCtrl = $controller('IclaimslineCtrl', {
-            $scope: scope
-        });
+          scope = $rootScope;
+          IclaimsFactory = _IclaimsFactory_;
+          IclaimslineCtrl = $controller;
+
+
         spyOn(scope, 'addLineAdjustment').and.callThrough();
 
         scope.lineForm = {};

@@ -12,8 +12,8 @@ describe('Filter: selectedrange', function () {
   }));
 
   it('should return the input prefixed with "selectedrange filter:"', function () {
-    var text = 'angularjs';
-    expect(selectedrange(text)).toBe('selectedrange filter: ' + text);
+    var text = '0123456789';
+    expect(selectedrange(text, 0, 2).length).toBe(3);
   });
 
 });
