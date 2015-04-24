@@ -21,6 +21,7 @@ angMod.controller('IclaimsLineCtrl',['$scope','$timeout','IclaimsFactory','selec
   iclaimsCtrl.claimObj = IclaimsFactory.getClaimObj();
   iclaimsCtrl.isRecall = IclaimsFactory.isRecalledClaim();
   iclaimsCtrl.claimLines = IclaimsFactory.getLineItems();
+  iclaimsCtrl.init = IclaimsFactory.init;
 
   iclaimsCtrl.selectedLineIdx = null;
   iclaimsCtrl.clearListObj = clearListObj;
@@ -40,9 +41,9 @@ angMod.controller('IclaimsLineCtrl',['$scope','$timeout','IclaimsFactory','selec
     return iclaimsCtrl.selected === index;
   };
 
-  function init(){
+  $scope.init = function(){
     updateFilteredLines(null);
-  }
+  };
 
   function updateFilteredLines(selectedLine){
     iclaimsCtrl.claimLinesFiltered =  $selectedRangeFilter(iclaimsCtrl.claimLines, selectedLine, iclaimsCtrl.listRange);
@@ -225,6 +226,10 @@ angMod.controller('IclaimsLineCtrl',['$scope','$timeout','IclaimsFactory','selec
 
   }
 
-  init();
+  iclaimsCtrl.init($scope);
+
+  iclaimsCtrl.test = function(){
+    console.log('hey the tests work');
+  }
 
 }]);

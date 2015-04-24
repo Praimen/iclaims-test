@@ -2,41 +2,50 @@
 
 
 describe('Controller: IclaimsLineCtrl', function () {
-  var IclaimslineCtrl,
-    scope, IclaimsFactory;
+  var IclaimslineCtrl, scope, IclaimsFactory,iclaimsCtrl;
   // load the controller's module
 
 
   beforeEach(module('yoNewTestApp', function ($provide){
-    IclaimsFactory = {
+
+    var IclaimsFactoryObj = {
       setClaimScope: jasmine.createSpy(),
       isRecalledClaim: jasmine.createSpy(),
       getLineItems: jasmine.createSpy(),
-      getClaimObj: jasmine.createSpy()
+      init: jasmine.createSpy(),
+
+      getClaimObj: jasmine.createSpy().and.callFake(function(){
+
+        return {};
+      })
     };
 
-    $provide.value('IclaimsFactory',IclaimsFactory);
+    $provide.value('IclaimsFactory',IclaimsFactoryObj);
   }));
-
-
 
   // Initialize the controller and a mock scope
-  beforeEach(inject(function ($controller, $rootScope, _IclaimsFactory_) {
-    scope = $rootScope.$new();
+  beforeEach(inject(function ($rootScope,$controller, _IclaimsFactory_) {
+    scope = $rootScope;
     IclaimsFactory = _IclaimsFactory_;
-    IclaimslineCtrl = $controller('IclaimsLineCtrl', {
-      $scope: scope
-    });
 
+    IclaimslineCtrl = $controller('IclaimsLineCtrl', {
+      $scope: scope,
+      $factory: IclaimsFactory
+    });
 
   }));
 
- it('the service should be in the controller', function () {
+  it('the service should be in the controller', function () {
     expect(IclaimsFactory).not.toBeUndefined();
   });
 
-  it('does the scope have the fucntions needed', function () {
-    expect(angular.isFunction(IclaimslineCtrl)).toBe(true);
+  it('the init function is in the service', function () {
+    expect(angular.isFunction(IclaimslineCtrl.init)).toBe(true);
+  });
+
+  it('the service should be in the controller', function () {
+
+    expect(IclaimslineCtrl).not.toBeUndefined();
   });
 
 

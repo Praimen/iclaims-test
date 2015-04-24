@@ -43,6 +43,9 @@ angular.module('yoNewTestApp')
       },
       isRecalledClaim : function(){
         return extScript.recalledClaim;
+      },
+      init : function(controllerScope){
+        controllerScope.init();
       }
 
 
