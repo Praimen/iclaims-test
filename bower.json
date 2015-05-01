@@ -11,12 +11,15 @@
     "greensock": "~1.15.1",
     "angular": "1.2.16",
     "angular-route": "1.2.16",
-    "underscore": "~1.7.0",
-    "jquery.maskedinput": "1.4.0"
+    "jquery.maskedinput": "1.4.0",
+    "open-modal": "*"
   },
   "devDependencies": {
     "normalize-css": "~3.0.1",
     "angular-mocks": "1.2.16"
   },
-  "appPath": "app"
+  "appPath": "app",
+  "resolutions": {
+    "underscore": "~1.7.0"
+  }
 }
