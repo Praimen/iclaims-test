@@ -1,0 +1,11 @@
+node_modules
+dist
+.tmp
+.sass-cache
+bower_components
+.idea/
+local_history.patch
+scratch-area/
+.jshintrc
+.editorconfig
+.gitattributes
