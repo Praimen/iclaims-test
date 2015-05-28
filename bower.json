@@ -11,15 +11,11 @@
     "greensock": "~1.15.1",
     "angular": "1.2.16",
     "angular-route": "1.2.16",
-    "jquery.maskedinput": "1.4.0",
-    "open-modal": "0.0.11",
-    "display-errors":"0.0.4",
-    "bcbs-tooltip":"0.0.1"
+    "jquery.maskedinput": "1.4.0"
   },
   "devDependencies": {
     "normalize-css": "~3.0.1",
     "angular-mocks": "1.2.16"
   },
   "appPath": "app"
-
 }
