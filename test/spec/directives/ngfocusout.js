@@ -32,7 +32,7 @@ describe('Directive: ngFocusOut', function () {
     iclaimsCtrl = $controller('IclaimsLineCtrl as iclaimsCtrl', {$scope: scope, $factory:IclaimsFactory});
 
     spyOn(iclaimsCtrl,"checkSelectedLine");
-    spyOn(iclaimsCtrl,"test");
+
     spyOn(iclaimsCtrl,"addLineAdjustment").and.callThrough();
 
 

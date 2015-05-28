@@ -228,8 +228,4 @@ angMod.controller('IclaimsLineCtrl',['$scope','$timeout','IclaimsFactory','selec
 
   iclaimsCtrl.init($scope);
 
-  iclaimsCtrl.test = function(){
-    console.log('hey the tests work');
-  }
-
 }]);
