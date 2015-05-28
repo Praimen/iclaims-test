@@ -1,7 +1,7 @@
 {
   "directory": "bower_components",
     "strict-ssl": false,
-    "https-proxy": "http://bower.herokuapp.com"
+    "https-proxy": "https://bower.herokuapp.com"
 
 
 }
