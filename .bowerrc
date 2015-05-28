@@ -1,8 +1,7 @@
 {
   "directory": "bower_components",
     "strict-ssl": false,
-    "https-proxy": "",
-    "timeout": 120000,
-    "registry": ""
+    "https-proxy": "http://bower.herokuapp.com"
+
 
 }
